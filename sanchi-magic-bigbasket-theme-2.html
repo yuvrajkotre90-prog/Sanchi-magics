@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanchi Magic | Online Store</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#171717}
+button,input{font:inherit}
+.app{max-width:700px;margin:auto;background:#fff;min-height:100vh;padding-bottom:82px}
+.top{background:#0b0b0b;color:#fff;padding:18px 18px 15px;position:sticky;top:0;z-index:20}
+.brand-row{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:28px;font-weight:800;letter-spacing:-1px}
+.logo span{color:#78b82a}
+.icon{font-size:26px}
+.location{font-size:14px;margin-top:18px}
+.location b{font-size:16px}
+.delivery{float:right;margin-top:-32px;text-align:center}
+.delivery small{display:block;font-size:11px}
+.delivery strong{background:#fff;color:#111;border-radius:18px;padding:8px 12px;display:inline-block}
+.search{margin-top:20px;background:#fff;border-radius:14px;padding:14px 16px;display:flex;gap:10px;align-items:center;color:#999}
+.search input{border:0;outline:0;width:100%;font-size:17px}
+.cats{display:flex;overflow:auto;gap:12px;padding:14px 14px 10px;background:#0b0b0b;color:white;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat{min-width:78px;text-align:center;font-weight:700;font-size:13px}
+.cat .circle{width:58px;height:58px;border-radius:50%;background:#181818;margin:auto auto 7px;display:flex;align-items:center;justify-content:center;font-size:27px}
+.hero{display:flex;gap:10px;overflow:auto;padding:14px 14px 20px}
+.hero-card{min-width:112px;height:112px;border-radius:18px;background:#f1f1f1;padding:12px;text-align:center;font-weight:700;display:flex;flex-direction:column;justify-content:space-between}
+.hero-card:first-child{background:#171717;color:#fff;font-size:16px}
+.section{padding:0 14px;margin-top:10px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.section h2{font-size:22px}
+.see{color:#198754;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{border:1px solid #e7e7e7;border-radius:16px;padding:8px;position:relative;background:#fff;box-shadow:0 1px 4px #eee}
+.pic{height:155px;background:#f5f5f5;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:70px}
+.discount{position:absolute;left:8px;top:8px;background:#6b9e12;color:#fff;padding:5px 9px;border-radius:10px 0 10px 0;font-size:12px;font-weight:800}
+.add{position:absolute;right:8px;top:126px;width:42px;height:42px;border:0;border-radius:10px;background:#008c4a;color:#fff;font-size:27px;box-shadow:0 2px 5px #aaa}
+.fast{font-size:12px;color:#16883e;font-weight:700;margin:9px 2px}
+.name{font-size:16px;font-weight:700;min-height:38px}
+.qty{font-size:13px;color:#777;margin:5px 0}
+.price{font-size:18px;font-weight:800}.mrp{text-decoration:line-through;color:#999;font-size:13px;margin-left:5px}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(700px,100%);height:72px;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;z-index:30}
+.nav{border:0;background:none;color:#888;font-size:12px;font-weight:600}.nav.active{color:#008c4a}.nav div{font-size:25px;margin-bottom:3px}
+.cartbar{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);width:min(660px,calc(100% - 28px));background:#008c4a;color:#fff;border-radius:14px;padding:14px 18px;display:none;justify-content:space-between;align-items:center;z-index:25;box-shadow:0 5px 18px #aaa}
+.cartbar button{background:#fff;color:#08783f;border:0;border-radius:9px;padding:9px 14px;font-weight:800}
+.empty{padding:40px;text-align:center;color:#777}
+@media(min-width:600px){.products{grid-template-columns:repeat(3,1fr)}.pic{height:165px}.add{top:136px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand-row"><div class="logo">sanchi<span>magic</span></div><div class="icon">◯</div></div>
+  <div class="location">⌖ Deliver to <b>Selected Location</b> ▾<br><span style="color:#aaa">Location helps us show availability</span></div>
+  <div class="delivery"><small>Delivers in</small><strong>⚡ 10 mins</strong></div>
+  <label class="search">⌕ <input id="search" placeholder="Search  products"></label>
+</header>
+
+<div class="cats">
+  <div class="cat"><div class="circle">🪔</div>Pooja</div>
+  <div class="cat"><div class="circle">🌸</div>Agarbatti</div>
+  <div class="cat"><div class="circle">🔥</div>Dhoop</div>
+  <div class="cat"><div class="circle">🧴</div>Handwash</div>
+  <div class="cat"><div class="circle">🧹</div>Cleaner</div>
+  <div class="cat"><div class="circle">👕</div>Cloth Wash</div>
+</div>
+
+<div class="hero">
+  <div class="hero-card">✨<span>After hours<br>offers →</span></div>
+  <div class="hero-card">🪔<span>Daily<br>Pooja</span></div>
+  <div class="hero-card">🌺<span>Fresh<br>Fragrance</span></div>
+  <div class="hero-card">🏷️<span>Special<br>Deals</span></div>
+  <div class="hero-card">🛍️<span>Bulk<br>Orders</span></div>
+</div>
+
+<section class="section">
+ <div class="section-head"><h2>Popular Products</h2><span class="see">See all ›</span></div>
+ <div id="products" class="products"></div>
+</section>
+
+<div id="cartbar" class="cartbar"><span><b id="count">0</b> items • ₹<b id="total">0</b></span><button onclick="orderWhatsApp()">Order on WhatsApp</button></div>
+
+<nav class="bottom">
+ <button class="nav active"><div>⌂</div>Home</button>
+ <button class="nav"><div>⊞</div>Categories</button>
+ <button class="nav"><div>◇</div>Top picks</button>
+ <button class="nav"><div>🛒</div>Basket</button>
+</nav>
+</div>
+
+<script>
+const products=[
+ {name:"Sanchi Magic Premium Agarbatti",qty:"100 sticks",price:49,mrp:65,off:"25% OFF",emoji:"🪔"},
+ {name:"Sanchi Magic Rose Agarbatti",qty:"100 sticks",price:55,mrp:75,off:"27% OFF",emoji:"🌹"},
+ {name:"Sanchi Magic Dhoop Batti",qty:"100 g",price:59,mrp:80,off:"26% OFF",emoji:"🔥"},
+ {name:"Sanchi Magic Handwash",qty:"250 ml",price:79,mrp:99,off:"20% OFF",emoji:"🧴"},
+ {name:"Sanchi Magic Floor Cleaner",qty:"1 L",price:99,mrp:129,off:"23% OFF",emoji:"🧹"},
+ {name:"Sanchi Magic Cloth Wash",qty:"1 kg",price:119,mrp:149,off:"20% OFF",emoji:"👕"},
+ {name:"Pooja Camphor",qty:"100 g",price:89,mrp:110,off:"19% OFF",emoji:"✨"},
+ {name:"Premium Cotton Wicks",qty:"100 pcs",price:35,mrp:45,off:"22% OFF",emoji:"🪷"}
+];
+let cart=[];
+function render(list=products){
+ const box=document.getElementById("products");
+ box.innerHTML=list.map((p,i)=>`<article class="card">
+  <span class="discount">${p.off}</span>
+  <div class="pic">${p.emoji}</div>
+  <button class="add" onclick="add(${i})">+</button>
+  <div class="fast">⚡ 10 mins</div>
+  <div class="name">${p.name}</div>
+  <div class="qty">${p.qty}</div>
+  <div class="price">₹${p.price}<span class="mrp">₹${p.mrp}</span></div>
+ </article>`).join("");
+}
+function add(i){cart.push(products[i]);updateCart()}
+function updateCart(){
+ document.getElementById("count").textContent=cart.length;
+ document.getElementById("total").textContent=cart.reduce((a,p)=>a+p.price,0);
+ document.getElementById("cartbar").style.display=cart.length?"flex":"none";
+}
+function orderWhatsApp(){
+ if(!cart.length)return;
+ const lines=cart.map(p=>`• ${p.name} - ₹${p.price}`).join("%0A");
+ const total=cart.reduce((a,p)=>a+p.price,0);
+ const msg=`Namaskar Sanchi Magic,%0Aमला खालील products order करायचे आहेत:%0A${lines}%0A%0ATotal: ₹${total}`;
+ window.open("https://wa.me/?text="+msg,"_blank");
+}
+document.getElementById("search").addEventListener("input",e=>{
+ const q=e.target.value.toLowerCase();
+ render(products.filter(p=>p.name.toLowerCase().includes(q)));
+});
+render();
+</script>
+</body>
+</html>
